@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_general"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:title="General" />
+    <item
+        android:id="@+id/nav_apps"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="Apps" />
+    <item
+        android:id="@+id/nav_forward"
+        android:icon="@android:drawable/ic_menu_send"
+        android:title="Forward" />
+    <item
+        android:id="@+id/nav_voice"
+        android:icon="@android:drawable/ic_btn_speak_now"
+        android:title="Voice" />
+</menu>

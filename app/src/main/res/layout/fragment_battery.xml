@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ios_background"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/ios_spacing_lg">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/ios_spacing_lg"
+            android:background="@drawable/ios_card_background"
+            android:elevation="@dimen/ios_card_elevation">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/ios_spacing_xl"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Bật theo dõi pin"
+                    android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                    android:textColor="@color/ios_label" />
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/enableBatterySwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.App.Switch.iOS" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/ios_spacing_lg"
+            android:background="@drawable/ios_card_background"
+            android:elevation="@dimen/ios_card_elevation">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/ios_spacing_xl">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Các mức pin cần đọc"
+                    android:textAppearance="@style/TextAppearance.App.Headline.iOS"
+                    android:textColor="@color/ios_label"
+                    android:layout_marginBottom="@dimen/ios_spacing_md" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kéo thả để sắp xếp lại thứ tự (tối đa 20 mức)"
+                    android:textAppearance="@style/TextAppearance.App.Caption.iOS"
+                    android:textColor="@color/ios_label_secondary"
+                    android:layout_marginBottom="@dimen/ios_spacing_lg" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/batteryLevelsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="100dp"
+                    android:maxHeight="400dp"
+                    android:nestedScrollingEnabled="true" />
+                <Button
+                    android:id="@+id/addBatteryLevelButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/ios_button_height"
+                    android:layout_marginTop="@dimen/ios_spacing_md"
+                    android:text="+ Thêm mức pin"
+                    android:textAllCaps="false"
+                    style="@style/Widget.App.Button.iOS" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/ios_spacing_lg"
+            android:background="@drawable/ios_card_background"
+            android:elevation="@dimen/ios_card_elevation">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/ios_spacing_xl">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Âm lượng"
+                    android:textAppearance="@style/TextAppearance.App.Headline.iOS"
+                    android:textColor="@color/ios_label"
+                    android:layout_marginBottom="@dimen/ios_spacing_sm" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <SeekBar
+                        android:id="@+id/volumeSeekBar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:max="100"
+                        android:progress="70" />
+                    <TextView
+                        android:id="@+id/volumeTextView"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:text="70%"
+                        android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                        android:textColor="@color/ios_label"
+                        android:gravity="end"
+                        android:layout_marginStart="@dimen/ios_spacing_md" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/ios_spacing_lg"
+            android:background="@drawable/ios_card_background"
+            android:elevation="@dimen/ios_card_elevation">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/ios_spacing_xl">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Khoảng thời gian hoạt động"
+                    android:textAppearance="@style/TextAppearance.App.Headline.iOS"
+                    android:textColor="@color/ios_label"
+                    android:layout_marginBottom="@dimen/ios_spacing_md" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginEnd="@dimen/ios_spacing_sm">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Từ giờ:"
+                            android:textAppearance="@style/TextAppearance.App.Caption.iOS"
+                            android:textColor="@color/ios_label_secondary"
+                            android:layout_marginBottom="@dimen/ios_spacing_xs" />
+                        <EditText
+                            android:id="@+id/timeStartEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/ios_text_field_height"
+                            android:hint="06:00"
+                            android:inputType="time"
+                            android:background="@drawable/ios_text_field_background"
+                            android:paddingStart="@dimen/ios_spacing_md"
+                            android:paddingEnd="@dimen/ios_spacing_md"
+                            android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                            android:textColor="@color/ios_label"
+                            android:focusable="false"
+                            android:clickable="true" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="@dimen/ios_spacing_sm">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Đến giờ:"
+                            android:textAppearance="@style/TextAppearance.App.Caption.iOS"
+                            android:textColor="@color/ios_label_secondary"
+                            android:layout_marginBottom="@dimen/ios_spacing_xs" />
+                        <EditText
+                            android:id="@+id/timeEndEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/ios_text_field_height"
+                            android:hint="22:00"
+                            android:inputType="time"
+                            android:background="@drawable/ios_text_field_background"
+                            android:paddingStart="@dimen/ios_spacing_md"
+                            android:paddingEnd="@dimen/ios_spacing_md"
+                            android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                            android:textColor="@color/ios_label"
+                            android:focusable="false"
+                            android:clickable="true" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/ios_spacing_lg"
+            android:background="@drawable/ios_card_background"
+            android:elevation="@dimen/ios_card_elevation">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/ios_spacing_xl">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mẫu câu đọc"
+                    android:textAppearance="@style/TextAppearance.App.Headline.iOS"
+                    android:textColor="@color/ios_label"
+                    android:layout_marginBottom="@dimen/ios_spacing_md" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Khi không sạc:"
+                    android:textAppearance="@style/TextAppearance.App.Caption.iOS"
+                    android:textColor="@color/ios_label_secondary"
+                    android:layout_marginBottom="@dimen/ios_spacing_xs" />
+                <EditText
+                    android:id="@+id/templateNotChargingEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Pin còn {percentage} phần trăm"
+                    android:inputType="text"
+                    android:background="@drawable/ios_text_field_background"
+                    android:padding="@dimen/ios_spacing_md"
+                    android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                    android:textColor="@color/ios_label"
+                    android:layout_marginBottom="@dimen/ios_spacing_lg" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Khi đang sạc:"
+                    android:textAppearance="@style/TextAppearance.App.Caption.iOS"
+                    android:textColor="@color/ios_label_secondary"
+                    android:layout_marginBottom="@dimen/ios_spacing_xs" />
+                <EditText
+                    android:id="@+id/templateChargingEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Pin đang sạc, hiện tại {percentage} phần trăm"
+                    android:inputType="text"
+                    android:background="@drawable/ios_text_field_background"
+                    android:padding="@dimen/ios_spacing_md"
+                    android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                    android:textColor="@color/ios_label"
+                    android:layout_marginBottom="@dimen/ios_spacing_lg" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Khi pin 100% (nhắc tháo sạc):"
+                    android:textAppearance="@style/TextAppearance.App.Caption.iOS"
+                    android:textColor="@color/ios_label_secondary"
+                    android:layout_marginBottom="@dimen/ios_spacing_xs" />
+                <EditText
+                    android:id="@+id/template100EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Pin đã đầy, vui lòng tháo sạc"
+                    android:inputType="text"
+                    android:background="@drawable/ios_text_field_background"
+                    android:padding="@dimen/ios_spacing_md"
+                    android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                    android:textColor="@color/ios_label" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dùng {percentage} để thay thế % pin"
+                    android:textAppearance="@style/TextAppearance.App.Caption.iOS"
+                    android:textColor="@color/ios_gray"
+                    android:layout_marginTop="@dimen/ios_spacing_xs" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/ios_spacing_lg"
+            android:background="@drawable/ios_card_background"
+            android:elevation="@dimen/ios_card_elevation">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/ios_spacing_xl">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cài đặt lặp lại khi pin 100%"
+                    android:textAppearance="@style/TextAppearance.App.Headline.iOS"
+                    android:textColor="@color/ios_label"
+                    android:layout_marginBottom="@dimen/ios_spacing_md" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/ios_spacing_md">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Số lần lặp:"
+                        android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                        android:textColor="@color/ios_label"
+                        android:layout_gravity="center_vertical" />
+                    <EditText
+                        android:id="@+id/repeatCountEditText"
+                        android:layout_width="80dp"
+                        android:layout_height="@dimen/ios_text_field_height"
+                        android:hint="3"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:background="@drawable/ios_text_field_background"
+                        android:paddingStart="@dimen/ios_spacing_md"
+                        android:paddingEnd="@dimen/ios_spacing_md"
+                        android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                        android:textColor="@color/ios_label"
+                        android:gravity="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Khoảng thời gian (phút):"
+                        android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                        android:textColor="@color/ios_label"
+                        android:layout_gravity="center_vertical" />
+                    <EditText
+                        android:id="@+id/repeatIntervalEditText"
+                        android:layout_width="80dp"
+                        android:layout_height="@dimen/ios_text_field_height"
+                        android:hint="5"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:background="@drawable/ios_text_field_background"
+                        android:paddingStart="@dimen/ios_spacing_md"
+                        android:paddingEnd="@dimen/ios_spacing_md"
+                        android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                        android:textColor="@color/ios_label"
+                        android:gravity="center" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/ios_spacing_lg"
+            android:background="@drawable/ios_card_background"
+            android:elevation="@dimen/ios_card_elevation">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/ios_spacing_xl">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trạng thái pin hiện tại"
+                    android:textAppearance="@style/TextAppearance.App.Headline.iOS"
+                    android:textColor="@color/ios_label"
+                    android:layout_marginBottom="@dimen/ios_spacing_md" />
+                <TextView
+                    android:id="@+id/currentBatteryStatusTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pin: --%, Trạng thái: --"
+                    android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                    android:textColor="@color/ios_label"
+                    android:layout_marginBottom="@dimen/ios_spacing_lg" />
+                <Button
+                    android:id="@+id/testSpeechButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/ios_button_height"
+                    android:text="Test đọc pin hiện tại"
+                    android:textAllCaps="false"
+                    style="@style/Widget.App.Button.iOS" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ios_button_height"
+            android:text="Lưu cấu hình"
+            android:textAllCaps="false"
+            android:layout_marginBottom="@dimen/ios_spacing_xl"
+            style="@style/Widget.App.Button.iOS" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/ios_spacing_lg"
+    android:layout_marginEnd="@dimen/ios_spacing_lg"
+    android:layout_marginTop="@dimen/ios_spacing_xs"
+    android:layout_marginBottom="@dimen/ios_spacing_xs"
+    android:background="@drawable/ios_card_background"
+    app:cardCornerRadius="@dimen/ios_corner_radius_md"
+    app:cardElevation="@dimen/ios_card_elevation">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/ios_spacing_lg">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/timestampTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="15:30:45"
+                android:textAppearance="@style/TextAppearance.App.Caption.iOS"
+                android:textColor="@color/ios_gray" />
+            <TextView
+                android:id="@+id/amountTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="390.000đ"
+                android:textAppearance="@style/TextAppearance.App.Headline.iOS"
+                android:textColor="@color/ios_green" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/appNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ios_spacing_xs"
+            android:text="Vietcombank"
+            android:textAppearance="@style/TextAppearance.App.Headline.iOS"
+            android:textColor="@color/ios_label" />
+        <TextView
+            android:id="@+id/fullTextTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ios_spacing_xs"
+            android:text="Vietcombank, Bạn đã nhận 390000 đồng"
+            android:textAppearance="@style/TextAppearance.App.Body.iOS"
+            android:textColor="@color/ios_label_secondary"
+            android:maxLines="2"
+            android:ellipsize="end" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

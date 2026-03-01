@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/ios_spacing_lg"
+    android:layout_marginEnd="@dimen/ios_spacing_lg"
+    android:layout_marginTop="@dimen/ios_spacing_xs"
+    android:layout_marginBottom="@dimen/ios_spacing_xs"
+    android:background="@drawable/ios_card_background"
+    android:elevation="@dimen/ios_card_elevation">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/ios_spacing_lg">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/ios_list_item_height">
+            <ImageView
+                android:id="@+id/appIconImageView"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@null" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/appIconImageView"
+                android:layout_toStartOf="@id/removeAppButton"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/ios_spacing_lg"
+                android:layout_marginEnd="@dimen/ios_spacing_sm"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/appNameTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                    android:textColor="@color/ios_label" />
+                <TextView
+                    android:id="@+id/batteryOptimizationStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/ios_spacing_xs"
+                    android:textAppearance="@style/TextAppearance.App.Caption.iOS"
+                    android:visibility="gone" />
+            </LinearLayout>
+            <ImageButton
+                android:id="@+id/removeAppButton"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_remove"
+                android:tint="@color/ios_red"
+                android:contentDescription="Remove app" />
+        </RelativeLayout>
+        <Button
+            android:id="@+id/optimizeAppButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ios_button_height_sm"
+            android:layout_marginTop="@dimen/ios_spacing_sm"
+            android:text="Disable Battery Optimization"
+            android:textAllCaps="false"
+            android:visibility="gone"
+            style="@style/Widget.Material3.Button.TextButton" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

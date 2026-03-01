@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Notification Forwarder</string>
+    <string name="permission_status_checking">Checking permission status...</string>
+    <string name="grant_permission">Grant Permission</string>
+    <string name="permission_granted">Notification Listener Permission: GRANTED</string>
+    <string name="permission_not_granted">Notification Listener Permission: NOT GRANTED</string>
+    <string name="tab_general">General</string>
+    <string name="tab_apps">Apps</string>
+    <string name="add_apps">Add Apps</string>
+    <string name="tab_history">History</string>
+    <string name="tab_telegram">Telegram</string>
+    <string name="tab_supabase">Supabase</string>
+    <string name="bot_token_hint">Bot Token</string>
+    <string name="chat_id_hint">Chat ID</string>
+    <string name="save_config">Save</string>
+    <string name="send_test_message">Send Test Message</string>
+    <string name="config_saved">Configuration saved</string>
+    <string name="test_message_sent">Test message sent!</string>
+    <string name="test_message_failed">Failed to send message. Check config and internet.</string>
+    <string name="fill_in_all_fields">Please fill in all fields.</string>
+    <string name="forwarding_service_status">Forwarding Service Status</string>
+    <string name="service_enabled">Enabled</string>
+    <string name="service_disabled">Disabled</string>
+    <string name="enable_supabase">Enable Supabase Forwarding</string>
+    <string name="supabase_url_hint">https://xxxxx.supabase.co</string>
+    <string name="supabase_anon_key_hint">Supabase Anon Key</string>
+    <string name="device_id_hint">Device ID (Optional)</string>
+    <string name="test_connection">Test Connection</string>
+    <string name="supabase_status_disabled">Status: Disabled</string>
+    <string name="supabase_status_not_configured">Status: Not configured</string>
+    <string name="supabase_status_configured">Status: Configured ✓</string>
+    <string name="enable_telegram">Enable Telegram Forwarding</string>
+    <string name="tab_speak">Speak</string>
+    <string name="enable_speak">Enable Amount Speech</string>
+    <string name="include_app_name">Include App Name</string>
+    <string name="extract_regex_label">Extract Regex Pattern:</string>
+    <string name="extract_regex_hint">\\+[\\d.,]+\\s*VND</string>
+    <string name="clean_regex_label">Clean Regex Pattern:</string>
+    <string name="clean_regex_hint">[^\\d]</string>
+    <string name="speech_template_label">Speech Template:</string>
+    <string name="speech_template_hint">Bạn đã nhận {debit_amount} đồng</string>
+    <string name="speech_template_with_app_label">Speech Template with App Name:</string>
+    <string name="speech_template_with_app_hint">{app_name}, Bạn đã nhận {debit_amount} đồng</string>
+    <string name="voice_language_label">Voice/Language:</string>
+    <string name="speed_label">Speed: 1.0x</string>
+    <string name="speed_label_value">Speed: %sx</string>
+    <string name="pitch_label">Pitch: 1.0x</string>
+    <string name="pitch_label_value">Pitch: %sx</string>
+    <string name="test_speech">Test Speech</string>
+    <string name="speak_history_title">📊 Speech History (Last 7 days)</string>
+    <string-array name="battery_charging_modes">
+        <item>Sạc</item>
+        <item>Không sạc</item>
+        <item>Cả hai</item>
+    </string-array>
+</resources>

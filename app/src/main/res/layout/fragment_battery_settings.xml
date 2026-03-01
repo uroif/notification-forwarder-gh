@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ios_background">
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/saveButtonContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/ios_spacing_lg"
+            android:paddingBottom="0dp">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/ios_spacing_lg"
+                android:background="@drawable/ios_card_background"
+                android:elevation="@dimen/ios_card_elevation">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/ios_spacing_xl"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Enable Battery Monitoring"
+                        android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                        android:textColor="@color/ios_label" />
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/enableBatterySwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.App.Switch.iOS" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/ios_spacing_lg"
+                android:background="@drawable/ios_card_background"
+                android:elevation="@dimen/ios_card_elevation">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/ios_spacing_xl">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Volume"
+                        android:textAppearance="@style/TextAppearance.App.Headline.iOS"
+                        android:textColor="@color/ios_label"
+                        android:layout_marginBottom="@dimen/ios_spacing_sm" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <SeekBar
+                            android:id="@+id/volumeSeekBar"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:max="100"
+                            android:progress="70" />
+                        <TextView
+                            android:id="@+id/volumeTextView"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:text="70%"
+                            android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                            android:textColor="@color/ios_label"
+                            android:gravity="end"
+                            android:layout_marginStart="@dimen/ios_spacing_md" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/ios_spacing_lg"
+                android:background="@drawable/ios_card_background"
+                android:elevation="@dimen/ios_card_elevation">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/ios_spacing_xl">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Active Time Range"
+                        android:textAppearance="@style/TextAppearance.App.Headline.iOS"
+                        android:textColor="@color/ios_label"
+                        android:layout_marginBottom="@dimen/ios_spacing_md" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="@dimen/ios_spacing_sm">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="From:"
+                                android:textAppearance="@style/TextAppearance.App.Caption.iOS"
+                                android:textColor="@color/ios_label_secondary"
+                                android:layout_marginBottom="@dimen/ios_spacing_xs" />
+                            <EditText
+                                android:id="@+id/timeStartEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/ios_text_field_height"
+                                android:hint="06:00"
+                                android:inputType="time"
+                                android:background="@drawable/ios_text_field_background"
+                                android:paddingStart="@dimen/ios_spacing_md"
+                                android:paddingEnd="@dimen/ios_spacing_md"
+                                android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                                android:textColor="@color/ios_label"
+                                android:focusable="false"
+                                android:clickable="true" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginStart="@dimen/ios_spacing_sm">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="To:"
+                                android:textAppearance="@style/TextAppearance.App.Caption.iOS"
+                                android:textColor="@color/ios_label_secondary"
+                                android:layout_marginBottom="@dimen/ios_spacing_xs" />
+                            <EditText
+                                android:id="@+id/timeEndEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/ios_text_field_height"
+                                android:hint="22:00"
+                                android:inputType="time"
+                                android:background="@drawable/ios_text_field_background"
+                                android:paddingStart="@dimen/ios_spacing_md"
+                                android:paddingEnd="@dimen/ios_spacing_md"
+                                android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                                android:textColor="@color/ios_label"
+                                android:focusable="false"
+                                android:clickable="true" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/ios_spacing_lg"
+                android:background="@drawable/ios_card_background"
+                android:elevation="@dimen/ios_card_elevation">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/ios_spacing_xl">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Speech Templates"
+                        android:textAppearance="@style/TextAppearance.App.Headline.iOS"
+                        android:textColor="@color/ios_label"
+                        android:layout_marginBottom="@dimen/ios_spacing_md" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="When not charging:"
+                        android:textAppearance="@style/TextAppearance.App.Caption.iOS"
+                        android:textColor="@color/ios_label_secondary"
+                        android:layout_marginBottom="@dimen/ios_spacing_xs" />
+                    <EditText
+                        android:id="@+id/templateNotChargingEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Battery at {percentage} percent"
+                        android:inputType="text"
+                        android:background="@drawable/ios_text_field_background"
+                        android:padding="@dimen/ios_spacing_md"
+                        android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                        android:textColor="@color/ios_label"
+                        android:layout_marginBottom="@dimen/ios_spacing_lg" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="When charging:"
+                        android:textAppearance="@style/TextAppearance.App.Caption.iOS"
+                        android:textColor="@color/ios_label_secondary"
+                        android:layout_marginBottom="@dimen/ios_spacing_xs" />
+                    <EditText
+                        android:id="@+id/templateChargingEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Battery charging, currently at {percentage} percent"
+                        android:inputType="text"
+                        android:background="@drawable/ios_text_field_background"
+                        android:padding="@dimen/ios_spacing_md"
+                        android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                        android:textColor="@color/ios_label"
+                        android:layout_marginBottom="@dimen/ios_spacing_lg" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="When 100% (reminder to unplug):"
+                        android:textAppearance="@style/TextAppearance.App.Caption.iOS"
+                        android:textColor="@color/ios_label_secondary"
+                        android:layout_marginBottom="@dimen/ios_spacing_xs" />
+                    <EditText
+                        android:id="@+id/template100EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Battery full, please unplug charger"
+                        android:inputType="text"
+                        android:background="@drawable/ios_text_field_background"
+                        android:padding="@dimen/ios_spacing_md"
+                        android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                        android:textColor="@color/ios_label" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Use {percentage} to replace battery percentage"
+                        android:textAppearance="@style/TextAppearance.App.Caption.iOS"
+                        android:textColor="@color/ios_gray"
+                        android:layout_marginTop="@dimen/ios_spacing_xs" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/ios_spacing_lg"
+                android:background="@drawable/ios_card_background"
+                android:elevation="@dimen/ios_card_elevation">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/ios_spacing_xl">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Repeat Settings for 100% Battery"
+                        android:textAppearance="@style/TextAppearance.App.Headline.iOS"
+                        android:textColor="@color/ios_label"
+                        android:layout_marginBottom="@dimen/ios_spacing_md" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="@dimen/ios_spacing_md">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Repeat count:"
+                            android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                            android:textColor="@color/ios_label"
+                            android:layout_gravity="center_vertical" />
+                        <EditText
+                            android:id="@+id/repeatCountEditText"
+                            android:layout_width="80dp"
+                            android:layout_height="@dimen/ios_text_field_height"
+                            android:hint="3"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:background="@drawable/ios_text_field_background"
+                            android:paddingStart="@dimen/ios_spacing_md"
+                            android:paddingEnd="@dimen/ios_spacing_md"
+                            android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                            android:textColor="@color/ios_label"
+                            android:gravity="center" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Interval (minutes):"
+                            android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                            android:textColor="@color/ios_label"
+                            android:layout_gravity="center_vertical" />
+                        <EditText
+                            android:id="@+id/repeatIntervalEditText"
+                            android:layout_width="80dp"
+                            android:layout_height="@dimen/ios_text_field_height"
+                            android:hint="5"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:background="@drawable/ios_text_field_background"
+                            android:paddingStart="@dimen/ios_spacing_md"
+                            android:paddingEnd="@dimen/ios_spacing_md"
+                            android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                            android:textColor="@color/ios_label"
+                            android:gravity="center" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/ios_spacing_xl"
+                android:background="@drawable/ios_card_background"
+                android:elevation="@dimen/ios_card_elevation">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/ios_spacing_xl">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Current Battery Status"
+                        android:textAppearance="@style/TextAppearance.App.Headline.iOS"
+                        android:textColor="@color/ios_label"
+                        android:layout_marginBottom="@dimen/ios_spacing_md" />
+                    <TextView
+                        android:id="@+id/currentBatteryStatusTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Battery: --%, Status: --"
+                        android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                        android:textColor="@color/ios_label"
+                        android:layout_marginBottom="@dimen/ios_spacing_lg" />
+                    <Button
+                        android:id="@+id/testSpeechButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/ios_button_height"
+                        android:text="Test Current Battery Speech"
+                        android:textAllCaps="false"
+                        style="@style/Widget.App.Button.iOS" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/saveButtonContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/ios_spacing_lg"
+        android:background="@color/ios_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ios_button_height"
+            android:backgroundTint="@color/button_save_green"
+            android:text="Save Configuration"
+            android:textAllCaps="false"
+            style="@style/Widget.App.Button.iOS" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

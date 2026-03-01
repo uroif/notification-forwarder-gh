@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ios_background">
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/actionButtonsCard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/ios_spacing_lg"
+            android:paddingBottom="0dp">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ios_spacing_sm"
+                android:background="@drawable/ios_card_background"
+                android:elevation="@dimen/ios_card_elevation">
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/enableTelegramSwitch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/ios_spacing_lg"
+                    android:text="Enable Telegram Forwarding"
+                    android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                    android:checked="true"
+                    style="@style/Widget.App.Switch.iOS" />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ios_spacing_xl"
+                android:background="@drawable/ios_card_background"
+                android:elevation="@dimen/ios_card_elevation">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/ios_spacing_lg">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bot Token"
+                        android:textAppearance="@style/TextAppearance.App.Headline.iOS"
+                        android:textColor="@color/ios_label"
+                        android:layout_marginBottom="@dimen/ios_spacing_sm" />
+                    <EditText
+                        android:id="@+id/botTokenEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/ios_text_field_height"
+                        android:hint="@string/bot_token_hint"
+                        android:inputType="text"
+                        android:background="@drawable/ios_text_field_background"
+                        android:paddingStart="@dimen/ios_spacing_lg"
+                        android:paddingEnd="@dimen/ios_spacing_lg"
+                        android:textAppearance="@style/TextAppearance.App.Body.iOS"
+                        android:textColor="@color/ios_label" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ios_spacing_xl"
+                android:layout_marginBottom="@dimen/ios_spacing_xl"
+                android:background="@drawable/ios_card_background"
+                android:elevation="@dimen/ios_card_elevation">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/ios_spacing_lg">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chat IDs"
+                        android:textAppearance="@style/TextAppearance.App.Headline.iOS"
+                        android:textColor="@color/ios_label"
+                        android:layout_marginBottom="@dimen/ios_spacing_sm" />
+                    <LinearLayout
+                        android:id="@+id/chatIdContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+                    <Button
+                        android:id="@+id/addChatIdButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/ios_button_height_sm"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="@dimen/ios_spacing_sm"
+                        android:text="Add Chat ID"
+                        android:textAllCaps="false"
+                        style="@style/Widget.Material3.Button.TextButton" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/actionButtonsCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/ios_spacing_lg"
+        android:background="@color/ios_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/ios_button_height"
+            android:layout_weight="1"
+            android:layout_marginEnd="@dimen/ios_spacing_sm"
+            android:backgroundTint="@color/button_save_green"
+            android:text="@string/save_config"
+            android:textAllCaps="false"
+            style="@style/Widget.App.Button.iOS" />
+        <Button
+            android:id="@+id/testButton"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/ios_button_height"
+            android:layout_weight="2"
+            android:layout_marginStart="@dimen/ios_spacing_sm"
+            android:text="@string/send_test_message"
+            android:textAllCaps="false"
+            style="@style/Widget.App.Button.iOS" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

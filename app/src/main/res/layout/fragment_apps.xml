@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ios_background">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/ios_spacing_lg">
+        <Button
+            android:id="@+id/optimizeAllAppsButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ios_button_height"
+            android:layout_marginTop="@dimen/ios_spacing_sm"
+            android:layout_marginBottom="@dimen/ios_spacing_md"
+            android:text="Optimize All Apps for Instant Delivery"
+            android:textAllCaps="false"
+            android:visibility="gone"
+            style="@style/Widget.App.Button.iOS" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/selectedAppsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingTop="@dimen/ios_spacing_xs"
+            android:paddingBottom="80dp" />
+    </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addAppsFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/ios_spacing_xl"
+        android:contentDescription="@string/add_apps"
+        app:tint="@color/white"
+        app:backgroundTint="@color/ios_blue"
+        app:srcCompat="@android:drawable/ic_input_add" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/ios_spacing_sm"
+    android:layout_marginBottom="@dimen/ios_spacing_sm"
+    app:cardCornerRadius="@dimen/ios_corner_radius_lg"
+    app:cardElevation="@dimen/ios_card_elevation"
+    android:background="@drawable/ios_card_background">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/ios_spacing_md"
+        android:gravity="center_vertical">
+        <ImageView
+            android:id="@+id/dragHandle"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@android:drawable/ic_menu_sort_by_size"
+            android:contentDescription="Drag to reorder"
+            android:tint="@color/ios_gray"
+            android:layout_marginEnd="@dimen/ios_spacing_md" />
+        <EditText
+            android:id="@+id/percentageEditText"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:hint="0-100"
+            android:inputType="number"
+            android:maxLength="3"
+            android:background="@drawable/ios_text_field_background"
+            android:paddingStart="@dimen/ios_spacing_sm"
+            android:paddingEnd="@dimen/ios_spacing_sm"
+            android:textAppearance="@style/TextAppearance.App.Body.iOS"
+            android:textColor="@color/ios_label"
+            android:gravity="center" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="%"
+            android:textAppearance="@style/TextAppearance.App.Body.iOS"
+            android:textColor="@color/ios_label"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="@dimen/ios_spacing_md" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textAppearance="@style/TextAppearance.App.Body.iOS"
+            android:textColor="@color/ios_label_secondary"
+            android:layout_marginEnd="@dimen/ios_spacing_sm" />
+        <Spinner
+            android:id="@+id/chargingModeSpinner"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/ios_text_field_background"
+            android:paddingStart="@dimen/ios_spacing_sm"
+            android:paddingEnd="@dimen/ios_spacing_sm"
+            android:spinnerMode="dropdown" />
+        <ImageButton
+            android:id="@+id/deleteButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_delete"
+            android:tint="@color/ios_red"
+            android:contentDescription="Xóa mức pin"
+            android:layout_marginStart="@dimen/ios_spacing_sm" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

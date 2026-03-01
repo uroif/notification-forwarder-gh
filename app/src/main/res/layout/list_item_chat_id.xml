@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/ios_spacing_sm">
+    <EditText
+        android:id="@+id/chatIdEditText"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/ios_text_field_height"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/removeChatIdButton"
+        android:layout_marginEnd="@dimen/ios_spacing_sm"
+        android:hint="@string/chat_id_hint"
+        android:inputType="text"
+        android:background="@drawable/ios_text_field_background"
+        android:paddingStart="@dimen/ios_spacing_lg"
+        android:paddingEnd="@dimen/ios_spacing_lg"
+        android:textAppearance="@style/TextAppearance.App.Body.iOS"
+        android:textColor="@color/ios_label" />
+    <ImageButton
+        android:id="@+id/removeChatIdButton"
+        android:layout_width="@dimen/ios_button_height_sm"
+        android:layout_height="@dimen/ios_button_height_sm"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Remove chat ID"
+        android:src="@android:drawable/ic_menu_delete"
+        android:tint="@color/ios_red" />
+</RelativeLayout>
